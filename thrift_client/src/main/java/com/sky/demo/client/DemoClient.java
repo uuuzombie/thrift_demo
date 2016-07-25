@@ -74,11 +74,5 @@ public class DemoClient {
 
     }
 
-    public static void main(String[] args) {
-        DemoClient client = new DemoClient();
-        List<User> userList = client.getUserList(UserType.ADMIN);
-        System.out.println(userList);
-    }
-
 
 }

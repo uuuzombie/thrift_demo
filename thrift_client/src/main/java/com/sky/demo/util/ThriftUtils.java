@@ -31,11 +31,23 @@ public class ThriftUtils {
         tTransportThreadLocal.remove();
     }
 
+    /**
+     * build protocol by default timeout
+     * @param info
+     * @return
+     * @throws TTransportException
+     */
     public static TMultiplexedProtocol buildProtocol(ThriftServerInfo info) throws TTransportException {
         return buildProtocol(info, TIMEOUT);
     }
 
-
+    /**
+     * build protocol
+     * @param info
+     * @param timeout
+     * @return
+     * @throws TTransportException
+     */
     public static TMultiplexedProtocol buildProtocol(ThriftServerInfo info, int timeout) throws TTransportException {
         boolean isUseSSL = false;
 
@@ -60,6 +72,9 @@ public class ThriftUtils {
         return tMultiplexedProtocol;
     }
 
+    /**
+     * close transport
+     */
     public static void close() {
         try {
             if (getTTransport() != null) {

@@ -37,15 +37,4 @@ public class DemoServiceWrapper {
         return userList;
     }
 
-    public static void main(String[] args) {
-        DemoServiceWrapper wrapper = new DemoServiceWrapper();
-        ThriftServerInfo info = new ThriftServerInfo();
-        info.setIp("127.0.0.1");
-        info.setPort(9000);
-        info.setServerTag("demo_service");
-
-        List<User> userList = wrapper.getUserList(info, UserType.ADMIN);
-        System.out.println(userList);
-    }
-
 }
